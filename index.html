@@ -21,10 +21,10 @@
             </div>
             <div v-for="movie in col.collection.items" class="card" style="width: 18rem;">
                 <div v-for="item in movie.data" class="card-body">
-                  <h5 class="card-title">{{item.prompt}}</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Ver</a>
+                  <p class="card-title">{{item.prompt}}</p>
+                  <p class="card-text">{{item.value}}</p>
                 </div>
+                <a :href="movie.href" class="btn btn-primary" target="_blank">Ver</a>
               </div>
             <!--
                  TODO: Mostrar datos del objeto collection. Ver archivo ./js/script.js
