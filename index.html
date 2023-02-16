@@ -17,15 +17,17 @@
         <!-- https://vuejs.org/v2/guide/index.html -->
         <div id="app">
             <div class="jumbotron">
-                <h1 class="display-4" id="title">{{col.collection.title}}</h1>
+                <h1 class="display-4 text-center" id="title">{{col.collection.title}}</h1>
             </div>
-            <div v-for="movie in col.collection.items" class="card" style="width: 18rem;">
-                <div v-for="item in movie.data" class="card-body">
-                  <p class="card-title">{{item.prompt}}</p>
-                  <p class="card-text">{{item.value}}</p>
+            <div class="container-fluid row d-flex justify-content-center">
+                <div v-for="movie in col.collection.items" class="card m-2 col-md-3 p-1" style="width: 30%; min-width: 24rem;">
+                    <div v-for="item in movie.data" class="card-body">
+                    <p class="card-title">{{item.prompt}}</p>
+                    <p class="card-text">{{item.value}}</p>
+                    </div>
+                    <a :href="movie.href" class="btn btn-primary" target="_blank">Ver</a>
                 </div>
-                <a :href="movie.href" class="btn btn-primary" target="_blank">Ver</a>
-              </div>
+            </div>
             <!--
                  TODO: Mostrar datos del objeto collection. Ver archivo ./js/script.js
                - Cargar la librería de VueJS y el script ./js/script.js al final de la etiqueta <body>
