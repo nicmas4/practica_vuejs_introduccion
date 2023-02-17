@@ -17,15 +17,16 @@
         <!-- https://vuejs.org/v2/guide/index.html -->
         <div id="app">
             <div class="jumbotron">
-                <h1 class="display-4 text-center" id="title">{{col.collection.title}}</h1>
+                <h1 class="py-5 ps-2" style="background-color:Gainsboro;" id="title">{{col.collection.title}}</h1>
             </div>
-            <div class="container-fluid row d-flex justify-content-center">
-                <div v-for="movie in col.collection.items" class="card m-2 col-md-3 p-1" style="width: 30%; min-width: 24rem;">
-                    <div v-for="item in movie.data" class="card-body">
-                    <p class="card-title">{{item.prompt}}</p>
+            <div class="container row mx-auto">
+
+                <div v-for="movie in col.collection.items" class="card col-md-4 mb-1" >
+                    <div v-for="item in movie.data" class="m-2">
+                    <p class="card-title h5">{{item.prompt}}</p>
                     <p class="card-text">{{item.value}}</p>
                     </div>
-                    <a :href="movie.href" class="btn btn-primary" target="_blank">Ver</a>
+                    <a :href="movie.href" class="btn btn-primary me-auto pb-2 mb-2" target="_blank"> Ver </a>
                 </div>
             </div>
             <!--
